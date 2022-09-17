@@ -32,6 +32,8 @@ _default_js = [
      'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'),
     ('awesome_markers',
      'https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js'),  # noqa
+    ('leaflet_china_correction',
+     'https://cdn.jsdelivr.net/gh/geoyee/lccjs@v0.1/leaflet_china_correction.js'),
     ]
 
 _default_css = [
@@ -54,7 +56,7 @@ class GlobalSwitches(Element):
 
     _template = Template("""
         <script>
-            L_NO_TOUCH = {{ this.no_touch |tojson}};
+            L_NO_TOUCH = {{ this.no_touch |tojson }};
             L_DISABLE_3D = {{ this.disable_3d|tojson }};
         </script>
     """)
@@ -80,6 +82,7 @@ class Map(JSCSSMixin, MacroElement):
         - "Cloudmade" (Must pass API key)
         - "Mapbox" (Must pass API key)
         - "CartoDB" (positron and dark_matter)
+        - "GeoQ China" (Community, Street)
 
     You can pass a custom tileset to Folium by passing a Leaflet-style
     URL to the tiles parameter: ``http://{s}.yourtiles.com/{z}/{x}/{y}.png``.

@@ -25,6 +25,7 @@ class TileLayer(Layer):
             - "OpenStreetMap"
             - "Stamen Terrain", "Stamen Toner", "Stamen Watercolor"
             - "CartoDB positron", "CartoDB dark_matter"
+            - "GeoQ China Community", "GeoQ China Street"
 
         You can pass a custom tileset to Folium by passing a Leaflet-style
         URL to the tiles parameter: ``http://{s}.yourtiles.com/{z}/{x}/{y}.png``.
