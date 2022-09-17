@@ -1,3 +1,14 @@
+foliume
+======
+
+*基于folium添加无偏移国内图源GeoQ，包名及所有用法与folium相同，但安装需要使用如下方式（结尾有个`e`）*
+
+```
+pip install foliume
+```
+
+======
+
 |PyPI| |Test| |Gitter| |DOI| |binder|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/folium.svg
