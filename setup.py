@@ -60,14 +60,14 @@ with open('requirements.txt') as f:
 install_requires = [t.strip() for t in tests_require]
 
 setup(
-    name='folium',
+    name='foliume',
     description='Make beautiful maps with Leaflet.js & Python',
     license="MIT",
     long_description='{}'.format(read("README.rst")),
     long_description_content_type="text/x-rst",
     author='Rob Story',
     author_email='wrobstory@gmail.com',
-    url='https://github.com/python-visualization/folium',
+    url='https://github.com/geoyee/folium',
     keywords='data visualization',
     classifiers=[
         'Programming Language :: Python :: 3.5',
