@@ -59,11 +59,15 @@ with open('requirements.txt') as f:
     tests_require = f.readlines()
 install_requires = [t.strip() for t in tests_require]
 
+with open('README.rst', encoding='utf-8') as f:
+    readme = f.read()
+
 setup(
     name='foliume',
+    version='0.0.1',
     description='Make beautiful maps with Leaflet.js & Python',
     license="MIT",
-    long_description='{}'.format(read("README.rst")),
+    long_description=readme,
     long_description_content_type="text/x-rst",
     author='Rob Story',
     author_email='wrobstory@gmail.com',
@@ -85,9 +89,4 @@ setup(
     extras_require={"testing": ["pytest"]},
     install_requires=install_requires,
     zip_safe=False,
-    use_scm_version={
-        "write_to": "folium/_version.py",
-        "write_to_template": '__version__ = "{version}"',
-        "tag_regex": r"^(?P<prefix>v)?(?P<version>[^\+]+)(?P<suffix>.*)?$",
-    },
 )

@@ -1,20 +1,21 @@
 foliume
-======
+=======
 
-基于folium添加基本无偏移国内图源，包名及所有用法与folium相同，但安装需要使用如下方式（结尾有个 ``e`` ）
+基于folium添加基本无偏移国内图源，包名及所有用法与folium相同，但安装需要使用如下方式（结尾有个
+``e`` ）
 
-.. code:: bash
+.. code:: shell
 
-    $ pip install foliume
+   pip install foliume
 
 添加：
 
-- GeoQ （tiles="GeoQ China Community / Street"）
-- 高德地图 （tiles="AMAP China"）
-- 腾讯地图 （tiles="TencentMap China"）
-- 百度地图 （tiles="BaiduMaps China"）
+-  GeoQ (tiles=“GeoQ China Community / Street”)
+-  高德地图 (tiles=“AMAP China”)
+-  腾讯地图 (tiles=“TencentMap China”)
+-  百度地图 (tiles=“BaiduMaps China”)
 
-简单案例参考：`test.ipynb <test.ipynb>`_
+简单案例参考：\ `test.ipynb <test.ipynb>`__
 
 ======
 
@@ -90,7 +91,6 @@ See `our complete contributor's guide <https://github.com/python-visualization/f
 
 
 .. |folium| image:: http://python-visualization.github.io/folium/_images/folium_logo.jpg
-
 
 
 Changelog
