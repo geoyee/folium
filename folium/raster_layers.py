@@ -26,6 +26,9 @@ class TileLayer(Layer):
             - "Stamen Terrain", "Stamen Toner", "Stamen Watercolor"
             - "CartoDB positron", "CartoDB dark_matter"
             - "GeoQ China Community", "GeoQ China Street"
+            - "AMAP China"
+            - "TencentMap China"
+            - "BaiduMaps China"
 
         You can pass a custom tileset to Folium by passing a Leaflet-style
         URL to the tiles parameter: ``http://{s}.yourtiles.com/{z}/{x}/{y}.png``.
@@ -96,6 +99,20 @@ class TileLayer(Layer):
                 'You can still use these providers by passing a URL to the `tiles` '
                 'argument. See the documentation of the `TileLayer` class.'
             )
+
+        cn_crs = None
+        if 'china' in tiles_flat:
+            cn_crs = 'gcj02'
+        if 'baidu' in tiles_flat:
+            cn_crs = 'bd09'
+            subdomains = '0123456789'
+            tms = True
+        elif 'amap' in tiles_flat:
+            subdomains = '1234'
+        elif 'tencent' in tiles_flat:
+            subdomains = '0123'
+            tms = True
+
         templates = list(self._env.list_templates(
             filter_func=lambda x: x.startswith('tiles/')))
         tile_template = 'tiles/' + tiles_flat + '/tiles.txt'
@@ -119,6 +136,7 @@ class TileLayer(Layer):
             detect_retina=detect_retina,
             tms=tms,
             opacity=opacity,
+            cn_crs=cn_crs,
             **kwargs
         )
 

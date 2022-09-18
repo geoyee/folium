@@ -1,7 +1,15 @@
 foliume
 ======
 
-*基于folium添加无偏移国内图源GeoQ，包名及所有用法与folium相同，但安装需要使用如下方式（结尾有个`e`）*
+基于folium添加无偏移国内图源，包名及所有用法与folium相同，但安装需要使用如下方式（结尾有个`e`）
+
+添加：
+1. GeoQ （tiles="GeoQ China Community(Street)"）
+2. 高德地图 （tiles="AMAP China"）
+3. 腾讯地图 （tiles="TencentMap China"）
+4. 百度地图 （tiles="BaiduMaps China"）
+
+简单案例参考：test.ipynb
 
 ```
 pip install foliume

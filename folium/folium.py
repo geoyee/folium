@@ -32,8 +32,12 @@ _default_js = [
      'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'),
     ('awesome_markers',
      'https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js'),  # noqa
+    ('proj4',
+     'https://cdn.bootcss.com/proj4js/2.4.3/proj4.js'),
+    ('proj4leaflet',
+     'https://cdn.bootcss.com/proj4leaflet/1.0.1/proj4leaflet.min.js'),
     ('leaflet_china_correction',
-     'https://cdn.jsdelivr.net/gh/geoyee/lccjs@v0.1/leaflet_china_correction.js'),
+     'https://cdn.jsdelivr.net/gh/geoyee/lccjs@v0.2/leaflet_china_correction.js'),
     ]
 
 _default_css = [
@@ -83,6 +87,9 @@ class Map(JSCSSMixin, MacroElement):
         - "Mapbox" (Must pass API key)
         - "CartoDB" (positron and dark_matter)
         - "GeoQ China" (Community, Street)
+        - "AMAP China"
+        - "TencentMap China"
+        - "BaiduMaps China"
 
     You can pass a custom tileset to Folium by passing a Leaflet-style
     URL to the tiles parameter: ``http://{s}.yourtiles.com/{z}/{x}/{y}.png``.
@@ -267,7 +274,7 @@ class Map(JSCSSMixin, MacroElement):
         max_bounds_array = [[min_lat, min_lon], [max_lat, max_lon]] \
             if max_bounds else None
 
-        self.crs = crs
+        self.crs = crs if tiles != "BaiduMaps China" else "Baidu"
         self.control_scale = control_scale
 
         self.options = parse_options(
